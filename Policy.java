@@ -1,5 +1,6 @@
 public class Policy
 {
+   // Instance Fields required to track policies' information
    private int policyNumber;
    private String providerName;
    private String firstName;
@@ -172,7 +173,7 @@ public class Policy
    }
    
    /**
-   Returns the boolean value on policy holder's smoking habits
+   Returns the boolean value on policy holder's smoking status
    */
    public boolean getSmoker()
    {
