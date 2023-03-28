@@ -220,7 +220,7 @@ public class Policy
          policyBasePrice += 75.00;
       }
       
-      if(smoker = true)
+      if(smoker == true)
       {
          policyBasePrice += 100.00;
       }

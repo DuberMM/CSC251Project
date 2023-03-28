@@ -1,6 +1,6 @@
-import.java.util.*;
+import java.util.*;
 
-public class policyDemo
+public class Project_Duber_MoreiraMaestre
 {
    public static void main(String[] args)
    {
@@ -23,15 +23,31 @@ public class policyDemo
       keyboard.nextLine();
       
       System.out.print("Please enter the Policyholder's Smoking Status(smoker/non-smoker): ");
-      boolean smoker = keyboard.nextBoolean();
-      keyboard.nextLine();
+      String smokerStatus = keyboard.nextLine();
+      boolean smoker = (smokerStatus.compareTo("smoker")==0)?true:false;
       
       System.out.print("Please enter the Policyholder's Height(in inches): ");
       double holderHeight = keyboard.nextDouble();
       
-      System.out.print("Please enter the Policyholder's Weight(in inches): ");
+      System.out.print("Please enter the Policyholder's Weight(in pounds): ");
       double holderWeight = keyboard.nextDouble();
+      System.out.println("");
+      
+      Policy p = new Policy(policyNumber, providerName, firstName, lastName, holderAge, smoker, holderHeight, holderWeight);
+      PrintPolicyInfo(p); 
    }
    
-   
+   public static void PrintPolicyInfo(Policy p)
+   {
+      System.out.println("Policy Number: " + p.getPolicyNumber());
+      System.out.println("Provider Name: " + p.getProviderName());
+      System.out.println("Policyholder's First Name: " + p.getFirstName());
+      System.out.println("Policyholder's Last Name: " + p.getLastName());
+      System.out.println("Policyholder's Age: " + p.getAge());
+      System.out.println("Policyholder's Smoking Status: " + (p.getSmoker()==true?"smoker":"non-smoker"));
+      System.out.printf("Policyholder's Height: %,.1f inches\n", p.getHeight());
+      System.out.printf("Policyholder's Weight: %,.1f pounds\n", p.getWeight());
+      System.out.printf("Policyholder's BMI: %,.2f\n", p.bodyMassIndex());
+      System.out.printf("Policy Price: $%,.2f", p.policyCost());
+   }
 }   
