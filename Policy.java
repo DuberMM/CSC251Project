@@ -134,6 +134,7 @@ public class Policy
    
    /**
    Returns the policy number value
+   @return the policy number value
    */
    public int getPolicyNumber()
    {
@@ -142,6 +143,7 @@ public class Policy
    
    /**
    Returns the name of the provider
+   @return the name of the provider
    */
    public String getProviderName()
    {
@@ -150,6 +152,7 @@ public class Policy
    
    /**
    Returns the policy holder's first name
+   @return the policy holder's first name
    */
    public String getFirstName()
    {
@@ -158,6 +161,7 @@ public class Policy
    
    /**
    Returns the policy holder's last name
+   @return the policy holder's last name
    */
    public String getLastName()
    {
@@ -166,6 +170,7 @@ public class Policy
    
    /**
    Returns the policy holder's age
+   @return the policy holder's age
    */
    public int getAge()
    {
@@ -174,6 +179,7 @@ public class Policy
    
    /**
    Returns the boolean value on policy holder's smoking status
+   @return the boolean value on policy holder's smoking status
    */
    public boolean getSmoker()
    {
@@ -182,6 +188,7 @@ public class Policy
    
    /**
    Returns the policy holder's height
+   @return the policy holder's height
    */
    public double getHeight()
    {
@@ -190,6 +197,7 @@ public class Policy
    
    /**
    Returns the policy holder's weight
+   @return the policy holder's weight
    */
    public double getWeight()
    {
