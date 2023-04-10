@@ -1,14 +1,14 @@
 public class Policy
 {
    // Instance Fields required to track policies' information
-   private int policyNumber;
-   private String providerName;
-   private String firstName;
-   private String lastName;
-   private int holderAge;
-   private boolean smoker;
-   private double holderHeight;
-   private double holderWeight;
+   private int policyNumber; // To hold the number of the policy
+   private String providerName; // To hold the name of the provider
+   private String firstName; // To hold the policy holder's first name
+   private String lastName; // To hold the policy holder's last name
+   private int holderAge; // To hold the policy holder's age
+   private boolean smoker; // To hold the boolean of the policy holder's status as a smoker
+   private double holderHeight; // To hold the policy holder's height
+   private double holderWeight; // To hold the policy holder's weight
    
    /**
    no-arg constructor that:
@@ -35,14 +35,14 @@ public class Policy
    
    /**
    Constructor that initializes fields to the value of the argument it is passed
-   @param the policy number
-   @param the provider name
-   @param the policy holder's first name
-   @param the policy holder's last name
-   @param the policy holder's age
-   @param the boolean smoker statement as false
-   @param the policy holder's height
-   @param the policy holder's weight
+   @param policyNumb the policy number
+   @param provName the provider name
+   @param fName the policy holder's first name
+   @param lName the policy holder's last name
+   @param age the policy holder's age
+   @param smoking the boolean smoker statement as false
+   @param height the policy holder's height
+   @param weight the policy holder's weight
    */
    public Policy(int policyNumb, String provName, String fName, String lName, int age, boolean smoking, double height, double weight)
    {
