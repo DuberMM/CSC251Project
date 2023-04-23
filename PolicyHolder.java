@@ -26,6 +26,7 @@ public class PolicyHolder
       holderWeight = 0.0;
    }
    
+   
    /**
    Constructor that initializes fields to the value of the argument it is passed
    @param fName the policy holder's first name
@@ -43,6 +44,20 @@ public class PolicyHolder
       smoker = smoking;
       holderHeight = height;
       holderWeight = weight;
+   }
+   
+   /**
+   Copy Constructor
+   @param obv A policyHolder object to make a copy of
+   */
+   public PolicyHolder(PolicyHolder obj)
+   {
+      firstName = obj.firstName;
+      lastName = obj.lastName;
+      holderAge = obj.holderAge;
+      smoker = obj.smoker;
+      holderHeight = obj.holderHeight;
+      holderWeight = obj.holderWeight;
    }
    
    // SETTERS (MUTATORS)

@@ -3,13 +3,14 @@ public class Policy
    // Instance Fields required to track policies' information
    private String policyNumber; // To hold the number of the policy
    private String providerName; // To hold the name of the provider
+   public static int policyCount;
    private PolicyHolder policyHolder;
-   public static int policyCount = 0;
    
    /**
    no-arg constructor that:
-   - initializes the policy number to 0
+   - initializes the policy number
    - initializes the provider name
+   - intializes the policy count to 0
    */
    public Policy()
    {
@@ -23,13 +24,14 @@ public class Policy
    @param policyNumb the policy number
    @param provName the provider name
    */
-   public Policy(String policyNumb, String provName, PolicyHolder polHold, int polCount)   
+   public Policy(String policyNumb, String provName, int polCount, PolicyHolder polHold)   
    {
       policyNumber = policyNumb;
       providerName = provName;
-      policyHolder = polHold;
       policyCount = polCount;
+      policyHolder = new PolicyHolder(polHold); //use the copy constructor 
    }
+   
    
    // SETTERS (MUTATORS)
    
@@ -49,6 +51,24 @@ public class Policy
    public void setProviderName(String provName)
    {
       providerName = provName;
+   }
+   
+   /**
+   Sets the policy count
+   @param polCount is the policy counter
+   */
+   public void setPolicyCount(int polCount)
+   {
+      policyCount = polCount;
+   }
+   
+   /**
+   Sets the policy holder class
+   @param polHold is the policy holder class
+   */
+   public void setPolicyHolder(PolicyHolder polHold)
+   {
+      policyHolder = new PolicyHolder(polHold); // making deep copy of the object
    }
    
    
@@ -72,6 +92,24 @@ public class Policy
       return providerName;
    }
    
+   /**
+   Returns the policy count
+   @return the policy count
+   */
+   public int getPolicyCount()
+   {
+      return policyCount;
+   }
+   
+   /**
+   Returns the policy holder class
+   @return the policy holder class
+   */
+   public PolicyHolder getPolicyHolder()
+   {
+      return new PolicyHolder(policyHolder); // making deep copy of the object
+   }
+   
    // OTHER METHODS
    
    /** 
@@ -81,6 +119,7 @@ public class Policy
    public String toString()
    {
       return "\nPolicy Number: " + policyNumber + 
-             "\nProvider Name: " + providerName;
+             "\nProvider Name: " + providerName +
+             policyHolder;
    }          
 }
