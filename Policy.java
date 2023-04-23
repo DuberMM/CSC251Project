@@ -72,7 +72,7 @@ public class Policy
    Method that provides a String representation of the information of a policy
    @return a String representation of the information of a policy
    */
-   public String toStringPolicy()
+   public String toString()
    {
       return "\nPolicy Number: " + policyNumber + 
              "\nProvider Name: " + providerName;
