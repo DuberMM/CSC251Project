@@ -216,10 +216,10 @@ public class PolicyHolder
              "\nPolicyholder's Last Name: " + lastName +
              "\nPolicyholder's Age: " + holderAge +
              "\nPolicyholder's Smoking Status: " + smoker +
-             "\nPolicyholder's Height: " + holderHeight + " inches" +
-             "\nPolicyholder's Weight: " + holderWeight + " pounds" +
-             "\nPolicyholder's BMI: " + bodyMassIndex() +
-             "\nPolicy Price: " + policyCost();
+             "\nPolicyholder's Height: " + String.format("%.2f", holderHeight) + " inches" +
+             "\nPolicyholder's Weight: " + String.format("%.2f", holderWeight) + " pounds" +
+             "\nPolicyholder's BMI: " + String.format("%.2f", bodyMassIndex()) +
+             "\nPolicy Price: " + String.format("%.2f", policyCost());
    }
    
 }
