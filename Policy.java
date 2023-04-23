@@ -66,4 +66,15 @@ public class Policy
       return providerName;
    }
    
+   // OTHER METHODS
+   
+   /** 
+   Method that provides a String representation of the information of a policy
+   @return a String representation of the information of a policy
+   */
+   public String toStringPolicy()
+   {
+      return "\nPolicy Number: " + policyNumber + 
+             "\nProvider Name: " + providerName;
+   }          
 }
