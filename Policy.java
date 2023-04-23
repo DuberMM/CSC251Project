@@ -1,12 +1,12 @@
 public class Policy
 {
    // Instance Fields required to track policies' information
-   private int policyNumber; // To hold the number of the policy
+   private String policyNumber; // To hold the number of the policy
    private String providerName; // To hold the name of the provider
    private String firstName; // To hold the policy holder's first name
    private String lastName; // To hold the policy holder's last name
    private int holderAge; // To hold the policy holder's age
-   private boolean smoker; // To hold the boolean of the policy holder's status as a smoker
+   private String smoker; // To hold the policy holder's status as a smoker
    private double holderHeight; // To hold the policy holder's height
    private double holderWeight; // To hold the policy holder's weight
    
@@ -23,12 +23,12 @@ public class Policy
    */
    public Policy()
    {
-      policyNumber = 0;
+      policyNumber = "";
       providerName = "";
       firstName = "";
       lastName = "";
       holderAge = 0;
-      smoker = false;
+      smoker = "";
       holderHeight = 0.0;
       holderWeight = 0.0;
    }
@@ -44,7 +44,7 @@ public class Policy
    @param height the policy holder's height
    @param weight the policy holder's weight
    */
-   public Policy(int policyNumb, String provName, String fName, String lName, int age, boolean smoking, double height, double weight)
+   public Policy(String policyNumb, String provName, String fName, String lName, int age, String smoking, double height, double weight)
    {
       policyNumber = policyNumb;
       providerName = provName;
@@ -62,7 +62,7 @@ public class Policy
    Sets the policy number
    @param policyNumb is the policy number
    */
-   public void setPolicyNumber(int policyNumb)
+   public void setPolicyNumber(String policyNumb)
    {
       policyNumber = policyNumb;
    }
@@ -107,7 +107,7 @@ public class Policy
    Sets a boolean that defines if the policy holder is a smoker
    @param smoking defines policy holder as a non-smoker by default
    */
-   public void setSmoker(boolean smoking)
+   public void setSmoker(String smoking)
    {
       smoker = smoking;
    }
@@ -136,7 +136,7 @@ public class Policy
    Returns the policy number value
    @return the policy number value
    */
-   public int getPolicyNumber()
+   public String getPolicyNumber()
    {
       return policyNumber;
    }
@@ -181,7 +181,7 @@ public class Policy
    Returns the boolean value on policy holder's smoking status
    @return the boolean value on policy holder's smoking status
    */
-   public boolean getSmoker()
+   public String getSmoker()
    {
       return smoker;
    }
@@ -211,7 +211,9 @@ public class Policy
    */
    public double bodyMassIndex()
    {
-      return (holderWeight * 703) / (holderHeight * holderHeight);
+      final double CONV_FACTOR = 703.00;
+      
+      return (holderWeight * CONV_FACTOR) / (holderHeight * holderHeight);
    }
    
    /** 
@@ -220,24 +222,32 @@ public class Policy
    */
    public double policyCost()
    {
-      double policyBasePrice = 600.00;
-      double additionalFee = (bodyMassIndex() - 35) * 20;
+      final double POLICY_BASE_PRICE = 600.00;
+      final double POLICY_AGE_FEE = 75.00;
+      final double POLICY_SMOKING_FEE = 100.00;
+      final double POLICY_BMI_FEE = 20.00;
       
-      if(holderAge > 50)
+      final int AGE_THRESHOLD = 50;
+      final int BODY_MASS_INDEX_THRESHOLD = 35;
+      double additionalFeeBMI = (bodyMassIndex() - BODY_MASS_INDEX_THRESHOLD) * POLICY_BMI_FEE;
+      
+      double finalPrice = POLICY_BASE_PRICE;
+      
+      if(holderAge > AGE_THRESHOLD)
       {
-         policyBasePrice += 75.00;
+         finalPrice += POLICY_AGE_FEE;
       }
       
-      if(smoker == true)
+      if(smoker.equalsIgnoreCase("smoker"))
       {
-         policyBasePrice += 100.00;
+         finalPrice += POLICY_SMOKING_FEE;
       }
       
-      if(bodyMassIndex() > 35)
+      if(bodyMassIndex() > BODY_MASS_INDEX_THRESHOLD)
       {
-         policyBasePrice += additionalFee;
+         finalPrice += additionalFeeBMI;
       }
       
-      return policyBasePrice;  
+      return finalPrice;  
    }
 }
