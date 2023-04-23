@@ -3,6 +3,8 @@ public class Policy
    // Instance Fields required to track policies' information
    private String policyNumber; // To hold the number of the policy
    private String providerName; // To hold the name of the provider
+   private PolicyHolder policyHolder;
+   public static int policyCount = 0;
    
    /**
    no-arg constructor that:
@@ -13,6 +15,7 @@ public class Policy
    {
       policyNumber = "";
       providerName = "";
+      policyCount = 0;
    }
    
    /**
@@ -20,9 +23,12 @@ public class Policy
    @param policyNumb the policy number
    @param provName the provider name
    */
-   public Policy(String policyNumb, String provName)   {
+   public Policy(String policyNumb, String provName, PolicyHolder polHold, int polCount)   
+   {
       policyNumber = policyNumb;
       providerName = provName;
+      policyHolder = polHold;
+      policyCount = polCount;
    }
    
    // SETTERS (MUTATORS)
