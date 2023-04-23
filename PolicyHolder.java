@@ -210,7 +210,7 @@ public class PolicyHolder
    Method that provides a String representation of a policy holder
    @return a String representation of a policy holder
    */
-   public String toStringHolder()
+   public String toString()
    {
       return "\nPolicyholder's First Name: " + firstName + 
              "\nPolicyholder's Last Name: " + lastName +
