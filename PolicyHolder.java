@@ -166,8 +166,9 @@ public class PolicyHolder
    public double bodyMassIndex()
    {
       final double CONV_FACTOR = 703.00;
+      double BMI = (holderWeight * CONV_FACTOR) / (holderHeight * holderHeight);
       
-      return (holderWeight * CONV_FACTOR) / (holderHeight * holderHeight);
+      return BMI;
    }
    
    /** 
@@ -203,6 +204,22 @@ public class PolicyHolder
       }
       
       return finalPrice;  
+   }
+   
+   /** 
+   Method that provides a String representation of a policy holder
+   @return a String representation of a policy holder
+   */
+   public String toStringHolder()
+   {
+      return "\nPolicyholder's First Name: " + firstName + 
+             "\nPolicyholder's Last Name: " + lastName +
+             "\nPolicyholder's Age: " + holderAge +
+             "\nPolicyholder's Smoking Status: " + smoker +
+             "\nPolicyholder's Height: " + holderHeight + " inches" +
+             "\nPolicyholder's Weight: " + holderWeight + " pounds" +
+             "\nPolicyholder's BMI: " + bodyMassIndex() +
+             "\nPolicy Price: " + policyCost();
    }
    
 }
