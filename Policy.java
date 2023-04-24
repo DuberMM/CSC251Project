@@ -120,6 +120,7 @@ public class Policy
    {
       return "\nPolicy Number: " + policyNumber + 
              "\nProvider Name: " + providerName +
-             policyHolder;
+             policyHolder; // Getting the To String Method from the PolicyHolder class 
+                           // through the policyHolder field added
    }          
 }
