@@ -38,12 +38,12 @@ public class PolicyHolder
    */
    public PolicyHolder(String fName, String lName, int age, String smoking, double height, double weight)
    {
-      firstName = fName;
-      lastName = lName;
-      holderAge = age;
-      smoker = smoking;
-      holderHeight = height;
-      holderWeight = weight;
+      this.firstName = fName;
+      this.lastName = lName;
+      this.holderAge = age;
+      this.smoker = smoking;
+      this.holderHeight = height;
+      this.holderWeight = weight;
    }
    
    /**
@@ -52,12 +52,12 @@ public class PolicyHolder
    */
    public PolicyHolder(PolicyHolder obj)
    {
-      firstName = obj.firstName;
-      lastName = obj.lastName;
-      holderAge = obj.holderAge;
-      smoker = obj.smoker;
-      holderHeight = obj.holderHeight;
-      holderWeight = obj.holderWeight;
+      this.firstName = obj.firstName;
+      this.lastName = obj.lastName;
+      this.holderAge = obj.holderAge;
+      this.smoker = obj.smoker;
+      this.holderHeight = obj.holderHeight;
+      this.holderWeight = obj.holderWeight;
    }
    
    // SETTERS (MUTATORS)
@@ -68,7 +68,7 @@ public class PolicyHolder
    */
    public void setFirstName(String fName)
    {
-      firstName = fName;
+      this.firstName = fName;
    }
    
    /**
@@ -77,7 +77,7 @@ public class PolicyHolder
    */
    public void setLastName(String lName)
    {
-      lastName = lName;
+      this.lastName = lName;
    }
    
    /**
@@ -86,7 +86,7 @@ public class PolicyHolder
    */
    public void setAge(int age)
    {
-      holderAge = age;
+      this.holderAge = age;
    }
    
    /**
@@ -95,7 +95,7 @@ public class PolicyHolder
    */
    public void setSmoker(String smoking)
    {
-      smoker = smoking;
+      this.smoker = smoking;
    }
    
    /**
@@ -104,7 +104,7 @@ public class PolicyHolder
    */ 
    public void setHeight(double height)
    {
-      holderHeight = height;
+      this.holderHeight = height;
    }
    
    /**
@@ -113,7 +113,7 @@ public class PolicyHolder
    */
    public void setWeight(double weight)
    {
-      holderWeight = weight;
+      this.holderWeight = weight;
    } 
    
    // GETTERS (ACCESORS)

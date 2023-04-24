@@ -26,10 +26,10 @@ public class Policy
    */
    public Policy(String policyNumb, String provName, int polCount, PolicyHolder polHold)   
    {
-      policyNumber = policyNumb;
-      providerName = provName;
-      policyCount = polCount;
-      policyHolder = new PolicyHolder(polHold); //use the copy constructor 
+      this.policyNumber = policyNumb;
+      this.providerName = provName;
+      this.policyCount = polCount;
+      this.policyHolder = new PolicyHolder(polHold); //use the copy constructor 
    }
    
    
@@ -41,7 +41,7 @@ public class Policy
    */
    public void setPolicyNumber(String policyNumb)
    {
-      policyNumber = policyNumb;
+      this.policyNumber = policyNumb;
    }
    
    /**
@@ -50,7 +50,7 @@ public class Policy
    */
    public void setProviderName(String provName)
    {
-      providerName = provName;
+      this.providerName = provName;
    }
    
    /**
@@ -59,7 +59,7 @@ public class Policy
    */
    public void setPolicyCount(int polCount)
    {
-      policyCount = polCount;
+      this.policyCount = polCount;
    }
    
    /**
@@ -68,7 +68,7 @@ public class Policy
    */
    public void setPolicyHolder(PolicyHolder polHold)
    {
-      policyHolder = new PolicyHolder(polHold); // making deep copy of the object
+      this.policyHolder = new PolicyHolder(polHold); // making deep copy of the object
    }
    
    
